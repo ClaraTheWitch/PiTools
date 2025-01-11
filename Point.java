@@ -28,16 +28,11 @@ public class Point
     
     /* 
      * Checks if the point is in the circle
-    */
-    public boolean isInCircle()
+     * @param  radius  the radius of the circle
+     * @return  whether the point is in the circle
+     */
+    public boolean isInCircle(int radius)
         {
-        if(this.distToCent <= 1 && this.distToCent >= -1)
-            {
-            return true;
-            }
-        else
-            {
-            return false;
-            }
+        return this.distToCent <= radius;
         }
     }
