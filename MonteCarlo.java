@@ -1,3 +1,6 @@
+//Import Modules
+import java.util.Random;
+
 public class MonteCarlo
     {
     /* 
@@ -25,13 +28,51 @@ public class MonteCarlo
 
     //Instance Variables
     private int numPoints;
+    private int radius;
+
+    //Other Variables and Objects
+    private Point[] points;//Temporarily holds randomly generated points
+    private Random randGen = new Random();//Random number generator
+    private int randNum;//Temporarily holds a random integer
 
     /*
      * Initializes objects of class MonteCarlo
      * @param  n  the number of points to be generated in the square
+     * @param  r  the radius of the circle
      */
-    public MonteCarlo(int n)
+    public MonteCarlo(int n, int r)
         {
         this.numPoints = n; //Holds number of points in square
+        this.radius = r; //Holds the radius of the circle
+        }
+    
+    /*
+     * Generates a list of points within the square.
+     * @return  an array of Point objects within the square.
+     */
+    private Point[] generatePoints()
+        {
+        points = new Point[this.numPoints];
+        for(int i = 0; i < this.numPoints; i++)
+            {
+            randNum = randGen.nextInt(4);
+            if(randNum == 0)//Point is in first quadrant
+                {
+                points[i] = new Point(randGen.nextDouble() * this.radius, randGen.nextDouble() * this.radius);
+                }
+            else if(randNum == 1)//Point is in second quadrant
+                {
+                points[i] = new Point(randGen.nextDouble() * this.radius, randGen.nextDouble() * this.radius * -1);
+                }
+            else if(randNum == 2)//Point is in third quadrant
+                {
+                points[i] = new Point(randGen.nextDouble() * this.radius * -1, randGen.nextDouble() * this.radius * -1);
+                }
+            else
+                {
+                points[i] = new Point(randGen.nextDouble() * this.radius * -1, randGen.nextDouble() * this.radius);
+                }
+            }
+        return points;
         }
     }
