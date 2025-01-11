@@ -34,6 +34,7 @@ public class MonteCarlo
     private Point[] points;//Temporarily holds randomly generated points
     private Random randGen = new Random();//Random number generator
     private int randNum;//Temporarily holds a random integer
+    private int count;//Temporarily holds the count something
 
     /*
      * Initializes objects of class MonteCarlo
@@ -47,30 +48,50 @@ public class MonteCarlo
         }
     
     /*
-     * Generates a list of points within the square.
-     * @return  an array of Point objects within the square.
+     * Counts the number of points in the circle
+     * @param  pList  the list of all points
+     * @param  rad  the radius of the circle
      */
-    private Point[] generatePoints()
+    private int countInCircle(Point[] pList, int rad)
         {
-        points = new Point[this.numPoints];
-        for(int i = 0; i < this.numPoints; i++)
+        count = 0;
+        for(int i = 0; i < pList.length; i++)
+            {
+            if(pList[i].isInCircle(rad))
+                {
+                count++;
+                }
+            }
+        return count;
+        }
+    
+    /*
+     * Generates a list of points within the square.
+     * @param  numP  the number of points to generate
+     * @param  halfLen  half the length of the square
+     * @return  an array of Point objects within the square
+     */
+    private Point[] generatePoints(int numP, int halfLen)
+        {
+        points = new Point[numP];
+        for(int i = 0; i < numP; i++)
             {
             randNum = randGen.nextInt(4);
             if(randNum == 0)//Point is in first quadrant
                 {
-                points[i] = new Point(randGen.nextDouble() * this.radius, randGen.nextDouble() * this.radius);
+                points[i] = new Point(randGen.nextDouble() * halfLen, randGen.nextDouble() * halfLen);
                 }
             else if(randNum == 1)//Point is in second quadrant
                 {
-                points[i] = new Point(randGen.nextDouble() * this.radius, randGen.nextDouble() * this.radius * -1);
+                points[i] = new Point(randGen.nextDouble() * halfLen, randGen.nextDouble() * halfLen * -1);
                 }
             else if(randNum == 2)//Point is in third quadrant
                 {
-                points[i] = new Point(randGen.nextDouble() * this.radius * -1, randGen.nextDouble() * this.radius * -1);
+                points[i] = new Point(randGen.nextDouble() * halfLen * -1, randGen.nextDouble() * halfLen * -1);
                 }
             else
                 {
-                points[i] = new Point(randGen.nextDouble() * this.radius * -1, randGen.nextDouble() * this.radius);
+                points[i] = new Point(randGen.nextDouble() * halfLen * -1, randGen.nextDouble() * halfLen);
                 }
             }
         return points;
