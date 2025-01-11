@@ -12,7 +12,9 @@ This program will allow the user to simulate various methods of approximating th
 
 Details will be added as classes are created.
 
-**MonteCarlo:** This class uses the Monte Carlo method of estimating pi. It's constructor takes the number of points to generate as a parameter. It uses a public pi() method to run the simulation and return pi.
+**MonteCarlo:** This class uses the Monte Carlo method of estimating pi. It's constructor takes the number of points to generate and the dimensions of the square as parameters. It uses a public pi() method to run the simulation and return pi.
+
+**Point:** This class is the blueprint for objects representing points in the square for the MonteCarlo class. Its constructor takes x and y double coordinates. It also has a isInCircle() method to return whether it is in the circle.
 
 **TestDriver:** This class is used to test the methods of other classes in the program.
 

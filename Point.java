@@ -8,4 +8,36 @@ public class Point
      *          for objects representing points in a square 
      *          for the MonteCarlo class.
      */
+    
+    //Instance Variables
+    private double xVal; 
+    private double yVal;
+    private double distToCent;//The point's distance to (0, 0)
+    
+    /*
+     * Initializes objects of class Point
+     * @param  x  The x component of the point's coordinate
+     * @param  y  The y component of the point's coordinate
+     */
+    public Point(double x, double y)
+        {
+        this.xVal = x;
+        this.yVal = y;
+        this.distToCent = Math.pow((Math.pow(this.xVal, 2.0) + Math.pow(this.yVal, 2.0)), 0.5);
+        }
+    
+    /* 
+     * Checks if the point is in the circle
+    */
+    public boolean isInCircle()
+        {
+        if(this.distToCent <= 1 && this.distToCent >= -1)
+            {
+            return true;
+            }
+        else
+            {
+            return false;
+            }
+        }
     }
