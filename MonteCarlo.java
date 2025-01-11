@@ -2,7 +2,7 @@ public class MonteCarlo
     {
     /* 
      * Author: Clara Siefke
-     * Collaborators: N/A
+     * Contributors: N/A
      * Last Modified: 01/11/2025
      * Summary: The Monte Carlo Method of estimating pi 
      *          works by randomly generating points within 
