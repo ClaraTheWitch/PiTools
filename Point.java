@@ -35,4 +35,13 @@ public class Point
         {
         return this.distToCent <= radius;
         }
+    
+    /*@Override
+     * Gives a string representation of the point
+     * @return  the point's coordinates as a string "(x,y)"
+     */
+    public String toString()
+        {
+        return "(" + this.xVal + "," + this.yVal + ")";
+        }
     }
