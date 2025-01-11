@@ -22,4 +22,16 @@ public class MonteCarlo
      *      www.geeksforgeeks.org/estimating-value-pi-using
      *      -monte-carlo/#. 
     */
+
+    //Instance Variables
+    private int numPoints;
+
+    /*
+     * Initializes objects of class MonteCarlo
+     * @param  n  the number of points to be generated in the square
+     */
+    public MonteCarlo(int n)
+        {
+        this.numPoints = n; //Holds number of points in square
+        }
     }
