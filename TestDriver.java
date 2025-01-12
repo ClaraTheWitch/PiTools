@@ -39,5 +39,17 @@ public class TestDriver
         System.out.println("point8 (should be (0.8,0.8)): " + point8.toString());
         System.out.println("point9 (should be (-0.2,-0.2)): " + point9.toString());
         System.out.println("point10 (should be (0.05,-0.004)): " + point10.toString());
+        System.out.println("*** Testing isInCircle ***");
+        System.out.println("Suppose the circle has radius 1.");
+        System.out.println("point1 is in the circle (should be true): " + point1.isInCircle(1));
+        System.out.println("point2 is in the circle (should be false): " + point2.isInCircle(1));
+        System.out.println("point3 is in the circle (should be false): " + point3.isInCircle(1));
+        System.out.println("point4 is in the circle (should be true): " + point4.isInCircle(1));
+        System.out.println("point5 is in the circle (should be true): " + point5.isInCircle(1));
+        System.out.println("point6 is in the circle (should be true): " + point6.isInCircle(1));
+        System.out.println("point7 is in the circle (should be true): " + point7.isInCircle(1));
+        System.out.println("point8 is in the circle (should be false): " + point8.isInCircle(1));
+        System.out.println("point9 is in the circle (should be true): " + point9.isInCircle(1));
+        System.out.println("point10 is in the circle (should be true): " + point10.isInCircle(1));
         }
     }
