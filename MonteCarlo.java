@@ -48,6 +48,17 @@ public class MonteCarlo
         }
     
     /*
+     * Give an approximation of the area of the circle
+     * @param  numP  the number of points in the square
+     * @param  rad  the radius of the circle
+     * @return  the area of the circle
+     */
+    public double area(int numP, int rad)
+        {
+        return (countInCircle(generatePoints(numP, rad), rad) / numP) * Math.pow(rad, 2);
+        }
+    
+    /*
      * Counts the number of points in the circle
      * @param  pList  the list of all points
      * @param  rad  the radius of the circle
