@@ -48,12 +48,12 @@ public class MonteCarlo
         }
     
     /*
-     * Give an approximation of the area of the circle
+     * Gives an approximation of the area of the circle
      * @param  numP  the number of points in the square
      * @param  rad  the radius of the circle
-     * @return  the area of the circle
+     * @return  the quotient of the number of points in the circle and the total points
      */
-    public double area(int numP, int rad)
+    private double area(int numP, int rad)
         {
         return (countInCircle(generatePoints(numP, rad), rad) / numP) * Math.pow(rad, 2);
         }
@@ -62,6 +62,7 @@ public class MonteCarlo
      * Counts the number of points in the circle
      * @param  pList  the list of all points
      * @param  rad  the radius of the circle
+     * @return  the number of points in the circle
      */
     private int countInCircle(Point[] pList, int rad)
         {
@@ -106,5 +107,14 @@ public class MonteCarlo
                 }
             }
         return points;
+        }
+    
+    /*
+     * Gives an approximation of pi
+     * @return  the quotient of the area of the circle and its radius squared
+     */
+    public double pi()
+        {
+        return this.area(this.numPoints, this.radius) / Math.pow(this.radius, 2);
         }
     }
