@@ -6,7 +6,7 @@ public class MonteCarlo
     /* 
      * Author: Clara Siefke
      * Contributors: N/A
-     * Last Modified: 01/11/2025
+     * Last Modified: 01/12/2025
      * Summary: The Monte Carlo Method of estimating pi 
      *          works by randomly generating points within 
      *          a square with a circle inscribed. It then 
@@ -55,7 +55,7 @@ public class MonteCarlo
      */
     private double area(int numP, int rad)
         {
-        return (countInCircle(generatePoints(numP, rad), rad) / numP) * Math.pow(rad, 2);
+        return (this.countInCircle(this.generatePoints(numP, rad), rad) / (double) numP) * (double) Math.pow(2 * rad, 2);
         }
     
     /*
@@ -115,6 +115,6 @@ public class MonteCarlo
      */
     public double pi()
         {
-        return this.area(this.numPoints, this.radius) / Math.pow(this.radius, 2);
+        return this.area(this.numPoints, this.radius) / (double) Math.pow(this.radius, 2);
         }
     }

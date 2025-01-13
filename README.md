@@ -8,7 +8,7 @@ This program will allow the user to simulate various methods of approximating th
 
 **Contributors:** N/A
 
-**Last Modified:** 01/11/2025
+**Last Modified:** 01/12/2025
 
 Details will be added as classes are created.
 
