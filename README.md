@@ -1,6 +1,6 @@
 # Pi Approximation Tools
 
-This program will allow the user to simulate various methods of approximating the value of pi. When running the program, the user will be able to select a method of approximating pi, input details about the chosen simulation (the number of points for Monte Carlo method, the number of values in a series, etc) along with the number of times to run each simulation, and recieve an approximation or approximations of pi.
+This program will allow the user to simulate various methods of approximating the value of pi. When running the program, the user will be able to select a method of approximating pi, input details about the chosen simulation (the number of points for Monte Carlo method, the number of values in a series, etc) along with the number of times to run each simulation, and receive an approximation or approximations of pi.
 
 ## Description
 
